@@ -1,0 +1,311 @@
+/* Estilos principais para o jogo Mahalilah */
+
+:root {
+  /* Cores principais */
+  --primary: #b45309;
+  --primary-light: #d97706;
+  --primary-dark: #92400e;
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+  --background: #fffbeb;
+  --card-bg: #fff;
+  --border-color: #e2e8f0;
+  
+  /* Cores dos planos */
+  --plano-basico: rgba(248, 211, 207, 0.7);
+  --plano-imaginario: rgba(248, 194, 145, 0.7);
+  --plano-racional: rgba(246, 229, 141, 0.7);
+  --plano-equilibrio: rgba(186, 220, 88, 0.7);
+  --plano-abertura: rgba(126, 214, 223, 0.7);
+  --plano-transformacao: rgba(104, 109, 224, 0.7);
+  --plano-conexao: rgba(214, 162, 232, 0.7);
+  --plano-divino: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-image: url('../assets/background-pattern.svg');
+  background-size: 200px;
+  background-repeat: repeat;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#game-header {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#game-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#game-header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+#game-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.screen {
+  display: none;
+  padding: 1rem 0;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Estilos da tela inicial */
+.home-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Estilos da tela de jogo */
+#game-canvas-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#game-controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Estilos da tela de regras */
+.rules-title {
+  font-size: 2rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.rules-section {
+  margin-bottom: 2rem;
+}
+
+.rules-section h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+}
+
+.rules-section ol, .rules-section ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rules-section li {
+  margin-bottom: 0.5rem;
+}
+
+.plano-item {
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Componentes reutilizáveis */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin: 0.5rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(180, 83, 9, 0.1);
+}
+
+/* Componentes do jogo */
+.object-selector {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.object-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.object-btn {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.object-btn:hover {
+  border-color: var(--primary);
+}
+
+.object-btn.active {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+}
+
+.house-meaning {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.house-meaning h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Dado */
+.dice {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  margin: 1rem auto;
+}
+
+.dice-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.dice-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 2px solid var(--primary-dark);
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-dark);
+  border-radius: 50%;
+}
+
+/* Rodapé */
+#game-footer {
+  background-color: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ornament-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Círculo externo -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#ornament-gradient)" stroke-width="3"/>
+  
+  <!-- Padrão de mandala -->
+  <g stroke="url(#ornament-gradient)" fill="none">
+    <!-- Círculos concêntricos -->
+    <circle cx="100" cy="100" r="80" stroke-width="2"/>
+    <circle cx="100" cy="100" r="65" stroke-width="2"/>
+    <circle cx="100" cy="100" r="50" stroke-width="2"/>
+    <circle cx="100" cy="100" r="35" stroke-width="2"/>
+    <circle cx="100" cy="100" r="20" stroke-width="2"/>
+    
+    <!-- Padrões radiais -->
+    <g stroke-width="2">
+      <!-- 8 divisões principais -->
+      <path d="M 100,5 L 100,195"/>
+      <path d="M 5,100 L 195,100"/>
+      <path d="M 29.3,29.3 L 170.7,170.7"/>
+      <path d="M 29.3,170.7 L 170.7,29.3"/>
+      
+      <!-- 16 divisões secundárias -->
+      <path d="M 73.2,14.6 L 126.8,185.4" stroke-width="1"/>
+      <path d="M 14.6,73.2 L 185.4,126.8" stroke-width="1"/>
+      <path d="M 14.6,126.8 L 185.4,73.2" stroke-width="1"/>
+      <path d="M 73.2,185.4 L 126.8,14.6" stroke-width="1"/>
+      <path d="M 50,13.4 L 150,186.6" stroke-width="1"/>
+      <path d="M 13.4,50 L 186.6,150" stroke-width="1"/>
+      <path d="M 13.4,150 L 186.6,50" stroke-width="1"/>
+      <path d="M 50,186.6 L 150,13.4" stroke-width="1"/>
+    </g>
+    
+    <!-- Padrões decorativos -->
+    <g stroke-width="1.5">
+      <!-- Pétalas -->
+      <path d="M 100,80 Q 115,90 100,100 Q 85,90 100,80" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 100,80 Q 115,70 100,60 Q 85,70 100,80" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 100,100 Q 115,110 100,120 Q 85,110 100,100" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 100,100 Q 115,90 130,100 Q 115,110 100,100" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 100,100 Q 85,90 70,100 Q 85,110 100,100" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      
+      <!-- Padrões nos círculos -->
+      <path d="M 100,20 Q 110,30 100,40 Q 90,30 100,20" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 100,160 Q 110,170 100,180 Q 90,170 100,160" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 20,100 Q 30,110 40,100 Q 30,90 20,100" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 160,100 Q 170,110 180,100 Q 170,90 160,100" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      
+      <!-- Cantos decorativos -->
+      <path d="M 40,40 Q 50,50 40,60 Q 30,50 40,40" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 160,40 Q 170,50 160,60 Q 150,50 160,40" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 40,160 Q 50,170 40,180 Q 30,170 40,160" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+      <path d="M 160,160 Q 170,170 160,180 Q 150,170 160,160" fill="url(#ornament-gradient)" fill-opacity="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Símbolo central (Om) -->
+  <text x="100" y="108" font-family="serif" font-size="30" fill="url(#ornament-gradient)" text-anchor="middle">ॐ</text>
+</svg>
